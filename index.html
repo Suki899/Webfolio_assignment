@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>My Webfolio</title>
+  <link href="style.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+  <div class="center">
+    <h1>Suki's Portfolio Website</h1>
+  </div>
+  <!-- Navigation menu -->
+  <nav>
+    <ul>
+      <li><a href="#about-me">About Me</a></li>
+      <li><a href="#projects">Projects</a></li>
+    </ul>
+  </nav>
+
+  <!-- About Me section -->
+  <section id="about-me">
+    <h1>About Me</h1>
+    <img src="Sukiya.png" alt="Your image" width = "200" height = "150" align = "right">
+    </section>
+    <h2>My Hobbies</h2>
+    <ul>
+      <li>Sleeping</li>
+      <li>Eating Sushi</li>
+      <li>Doing homework</li>
+    </ul>
+    <!-- Ordered List -->
+  <h2>Basic info about me</h2>
+  <table>
+    <tr>
+      <th>Name</th>
+      <td>Suki</td>
+    </tr>
+    <tr>
+      <th>Age</th>
+      <td>17</td>
+    </tr>
+    <tr>
+      <th>Gender</th>
+      <td>Male</td>
+    </tr>
+    <tr>
+      <th>Location</th>
+      <td>Singapore</td>
+    </tr>
+  </table>
+  <!-- Projects section -->
+  <section id="projects">
+    <h1>Projects</h1>
+    <ul>
+      <li>
+        <h2>Pokedex Project</h2>
+        <p>The "Pokemon Super Search Engine" is a <u>Python project</u> that allows users to search for and display information about different Pokemon. Users can search for Pokemon based on a variety of criteria, such as type, stats, and whether or not they are legendary. The project uses a list of dictionaries containing information about each Pokemon, and includes functions for formatting and displaying the data in a user-friendly way.</p>
+        <a href="https://github.com/Suki899/Pokedex">Pokedex Github Repository</a>
+      </li>
+    </ul>
+  </section>
+  <h2>How to contact me?</h2>
+  <ol>
+    <li>Email me at suki.duki@gmail.com</li>
+    <li>Call me at +65 12345678</li>
+    <li>Add me as a friend on mc.hypixel.net: My username is Suki899</li>
+  </ol>
+<!-- Surprise me button -->
+<button id="surprise-btn" style="position: absolute; z-index: 9999;" onclick="changeColorScheme()">Surprise Me!</button>
+
+<script>
+  function getRandomColor() {
+    // Array of color values
+    var colors = ["#ff6b6b", "#ffa69e", "#ffbf69", "#eaffd0", "#d7fffe", "#adebff", "#b5e3ff", "#d3c0fd", "#f8b4fe", "#ff9ff3"];
+    // Get a random index from the colors array
+    var randomIndex = Math.floor(Math.random() * colors.length);
+    // Return the randomly selected color
+    return colors[randomIndex];
+  }
+
+  function changeColorScheme() {
+    // Get a random color
+    var randomColor = getRandomColor();
+    // Set the body background color to the random color
+    document.body.style.backgroundColor = randomColor;
+
+    // Set the color of the "Surprise Me" button to a contrasting color
+    document.getElementById("surprise-btn").style.color = getContrastingColor(randomColor);
+
+    // Set the color of the header ("h1" element) to a contrasting color
+    var headerElement = document.querySelector('h1');
+    headerElement.style.color = getContrastingColor(randomColor);
+  }
+
+  function getContrastingColor(color) {
+    // Get the RGB values of the color
+    var r = parseInt(color.substr(1, 2), 16);
+    var g = parseInt(color.substr(3, 2), 16);
+    var b = parseInt(color.substr(5, 2), 16);
+
+    // Calculate the luminance of the color
+    var luminance = (0.299 * r + 0.587 * g + 0.114 * b) / 255;
+
+    // Return white or black based on the luminance
+    return (luminance > 0.5) ? "#000000" : "#ffffff";
+  }
+</script>
+</script>
+</body>
+</html>
+</body>
+</html>
